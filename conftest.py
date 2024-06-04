@@ -15,3 +15,9 @@ def user():
     user.create()
     yield user
     user.remove()
+
+from modules.api.clients.github import GitHub
+@pytest.fixture
+def github_api():
+    api=GitHub()
+    yield api
