@@ -3,14 +3,14 @@ from modules.api.clients.github import GitHub
 
 @pytest.mark.api
 def test_user_exists(github_api):
-   # api=GitHub()  - ПЕРЕНОС В ФИКСТУРУ
+   # api=GitHub()  
    # user=api.get_user(username='defunkt')
     user=github_api.get_user(username='defunkt')
     assert user['login']=='defunkt'
 
 @pytest.mark.api
 def test_user_not_exists(github_api):
-   # api=GitHub()   - перенос в фикстуру conftest.py
+   # api=GitHub()   
    # r=api.get_user(username='butenkosergii')
     r=github_api.get_user(username='butenkosergii')
    # print(r)
